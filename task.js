@@ -13,8 +13,6 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
-  // console.log(typeof Number(percent));
-  // console.log(Number(percent));
   if(Number.isNaN(Number(percent)) || typeof percent === "undefined") {
     return "Параметр \"Процентная ставка\" содержит неправильное значение \"" + percent + "\"";
   }
