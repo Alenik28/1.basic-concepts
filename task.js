@@ -13,9 +13,12 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
-  let totalAmount;
-
-  // код для задачи №2 писать здесь
-
+  let creditBody = amount - contribution;
+  let today = new Date();
+  let months = (date.getFullYear() - today.getFullYear()) * 12 + (date.getMonth() - today.getMonth());
+  let partOfTheInterestRate = percent / 12 / 100;
+  let payment = creditBody * (partOfTheInterestRate + partOfTheInterestRate / ((Math.pow((1 + partOfTheInterestRate), months)) - 1));
+  let totalAmount = Number((payment * months).toFixed(2));
+  console.log(totalAmount);
   return totalAmount;
 }
