@@ -13,6 +13,17 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
+  // console.log(typeof Number(percent));
+  // console.log(Number(percent));
+  if(Number.isNaN(Number(percent)) || typeof percent === "undefined") {
+    return "Параметр \"Процентная ставка\" содержит неправильное значение \"" + percent + "\"";
+  }
+  if(Number.isNaN(Number(contribution)) || typeof contribution === "undefined") {
+    return "Параметр \"Начальный взнос\" содержит неправильное значение \"" + contribution + "\"";
+    }
+  if(Number.isNaN(Number(amount)) || typeof amount === "undefined") {
+    return "Параметр \"Общая стоимость\" содержит неправильное значение \"" + amount + "\"";
+  }
   let creditBody = amount - contribution;
   let today = new Date();
   let months = (date.getFullYear() - today.getFullYear()) * 12 + (date.getMonth() - today.getMonth());
